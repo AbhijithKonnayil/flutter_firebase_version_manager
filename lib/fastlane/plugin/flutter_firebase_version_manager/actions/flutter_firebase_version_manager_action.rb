@@ -10,9 +10,11 @@ module Fastlane
         UI.message("The flutter_firebase_version_manager plugin is working!")
         app_id=params[:app_id]
         firebase_cli_token=params[:firebase_cli_token]
-        latest_release=self.get_latest_release(firebase_cli_token,app_id)
-        puts latest_release
-        self.get_property_from_release(latest_release,:buildVersion)
+        #latest_release=self.get_latest_release(firebase_cli_token,app_id)
+        #puts latest_release
+        #self.get_property_from_release(latest_release,:buildVersion)
+        puts  "sdafasdfdfdsfasd"
+        other_action.increment_flutter_version_code(pubspec_file_path:"pubspec.yaml")
       end
 
       def self.description
