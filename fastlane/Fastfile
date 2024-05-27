@@ -1,0 +1,8 @@
+require 'dotenv'
+Dotenv.load
+
+lane :test do
+  firebase_cli_token = ENV['FIREBASE_CI_TOKEN']
+  app_id = ENV['FIREBASE_APP_ID']
+  flutter_firebase_version_manager(app_id:app_id,firebase_cli_token:firebase_cli_token)
+end
