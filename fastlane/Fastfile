@@ -4,5 +4,10 @@ Dotenv.load
 lane :test do
   firebase_cli_token = ENV['FIREBASE_CI_TOKEN']
   app_id = ENV['FIREBASE_APP_ID']
-  flutter_firebase_version_manager(app_id:app_id,firebase_cli_token:firebase_cli_token)
+  #flutter_firebase_version_manager(app_id:app_id,firebase_cli_token:firebase_cli_token)
+  increment_flutter_version(
+    pubspec_file_path:"pubspec.yaml",
+    value:0,
+    version_component:"minor"
+  )
 end

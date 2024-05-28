@@ -3,15 +3,15 @@ require 'fileutils'
 
 module Fastlane
   module Actions
-    class IncrementFlutterVersionCodeAction < Action
+    class IncrementFlutterVersionNameAction < Action
       def self.run(params)
         version_code = "0"
         new_version_code ||= params[:version_code]
         constant_name ||= params[:ext_constant_name]
         pubspec_file_path ||= params[:pubspec_file_path]
-        puts "gradle path #{pubspec_file_path}" 
+        
         if pubspec_file_path != nil
-            UI.message("The increment_version_code plugin will use gradle file at (#{pubspec_file_path})!")
+            UI.message("The increment_version_code plugin will use pubspec file at (#{pubspec_file_path})!")
             new_version_code = incrementVersion(pubspec_file_path, new_version_code, constant_name)
         else
             app_folder_name ||= params[:app_folder_name]
